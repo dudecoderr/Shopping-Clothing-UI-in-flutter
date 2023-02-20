@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double listHeight = 335.h;
   double blackHeight = 100.h;
   double blackwidth = 320.w;
-  double position = 180.h;
+  double position = 160.h;
   String name = "name";
   List colors = [
     const Color(0xffa2aef8),
@@ -46,28 +46,28 @@ class _HomeScreenState extends State<HomeScreen> {
   DragUpdateDetails? updateVerticalDragDetails;
   DragStartDetails? startVerticalDragDetails;
 
-  @override
-  void initState() {
-    _scrollController.addListener(() {
-      if (_scrollController.offset >=
-          _scrollController.position.maxScrollExtent) {
-        setState(() {
-          blackHeight = 50.h;
-          blackwidth = (blackwidth / 3).w;
-        });
-        print("scroll detect");
-      }
-      if (_scrollController.offset <=
-              _scrollController.position.minScrollExtent &&
-          !_scrollController.position.outOfRange) {
-        setState(() {
-          blackHeight = 100.h;
-          print("reach the top");
-        });
-      }
-    });
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   _scrollController.addListener(() {
+  //     if (_scrollController.offset >=
+  //         _scrollController.position.maxScrollExtent) {
+  //       setState(() {
+  //         blackHeight = 50.h;
+  //         blackwidth = (blackwidth / 3).w;
+  //       });
+  //       print("scroll detect");
+  //     }
+  //     if (_scrollController.offset <=
+  //             _scrollController.position.minScrollExtent &&
+  //         !_scrollController.position.outOfRange) {
+  //       setState(() {
+  //         blackHeight = 100.h;
+  //         print("reach the top");
+  //       });
+  //     }
+  //   });
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -221,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 setState(() {
                                   listHeight = 100.h;
                                   color = Colors.white;
-                                  listHeight = 1200.h;
+                                  listHeight = 1150.h;
                                   height = 300.h;
                                   width = 180.w;
                                   sizeHeight = 60.h;
@@ -237,13 +237,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   topText = 20.h;
                                   topHeight = 60.h;
                                   belowHeight = 400.h;
-                                  position = 180.h;
+                                  position = 160.h;
                                 });
                               } else {
                                 print('Hello swipe down--------------');
                                 setState(() {
                                   color = Colors.black;
-                                  height = 1200.h;
+                                  height = 1150.h;
                                   width = 360.w;
                                   sizeHeight = 0.h;
                                   imgHeight = 0.h;
@@ -259,7 +259,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   belowHeight = 0.h;
                                   rightMargin = 0.w;
                                   productHeight = 0;
-
                                   position = 0.h;
                                 });
                               }
@@ -342,75 +341,76 @@ class _HomeScreenState extends State<HomeScreen> {
                           Stack(
                             children: [
                               GestureDetector(
-                                // onVerticalDragUpdate: (dragDetails) {
-                                //   updateVerticalDragDetails = dragDetails;
-                                // },
-                                // onVerticalDragStart: (dragDetails) {
-                                //   startVerticalDragDetails = dragDetails;
-                                // },
-                                // onVerticalDragEnd: (endDetails) {
-                                //   double dx = updateVerticalDragDetails!
-                                //           .globalPosition.dx -
-                                //       startVerticalDragDetails!
-                                //           .globalPosition.dx;
-                                //   double dy = updateVerticalDragDetails!
-                                //           .globalPosition.dy -
-                                //       startVerticalDragDetails!
-                                //           .globalPosition.dy;
-                                //   double? velocity = endDetails.primaryVelocity;
-                                //
-                                //   if (dx < 0) dx = -dx;
-                                //   if (dy < 0) dy = -dy;
-                                //   if (velocity! > 0) {
-                                //     print('Hello swipe down');
-                                //     setState(() {
-                                //       listHeight = 100.h;
-                                //       color = Colors.white;
-                                //       listHeight = 1200.h;
-                                //       height = 300.h;
-                                //       width = 180.w;
-                                //       sizeHeight = 60.h;
-                                //       imgHeight = 50.h;
-                                //       reviewHeight = 40.h;
-                                //       textHeight = 32.sp;
-                                //       titleHeight = 15.sp;
-                                //       iconHeight = 20.h;
-                                //       firstHeight = 100.h;
-                                //       topLeft = 20.r;
-                                //       topRight = 20.r;
-                                //       topText = 20.h;
-                                //       topHeight = 60.h;
-                                //       belowHeight = 400.h;
-                                //     });
-                                //   } else {
-                                //     print('Hello swipe down--------------');
-                                //     setState(() {
-                                //       // selected = !selected;
-                                //       // color = Colors.black;
-                                //       // height = 1200.h;
-                                //       // width = 360.w;
-                                //       // sizeHeight = 0.h;
-                                //       // imgHeight = 0.h;
-                                //       // reviewHeight = 0.h;
-                                //       // textHeight = 0.sp;
-                                //       // titleHeight = 0.sp;
-                                //       // iconHeight = 0.h;
-                                //       secondHeight = 0;
-                                //       firstHeight = 0.h;
-                                //       blackHeight = 100.h;
-                                //       listHeight = 1200.h;
-                                //       productHeight = 0.h;
-                                //       topHeight = 10.h;
-                                //       position = 10.h;
-                                //       // topLeft = 0.r;
-                                //       // topRight = 0.r;
-                                //       // topText = 0.h;
-                                //       // topHeight = 0.h;
-                                //       // belowHeight = 0.h;
-                                //       // rightMargin = 0.w;
-                                //     });
-                                //   }
-                                // },
+                                onVerticalDragUpdate: (dragDetails) {
+                                  updateVerticalDragDetails = dragDetails;
+                                },
+                                onVerticalDragStart: (dragDetails) {
+                                  startVerticalDragDetails = dragDetails;
+                                },
+                                onVerticalDragEnd: (endDetails) {
+                                  double dx = updateVerticalDragDetails!
+                                          .globalPosition.dx -
+                                      startVerticalDragDetails!
+                                          .globalPosition.dx;
+                                  double dy = updateVerticalDragDetails!
+                                          .globalPosition.dy -
+                                      startVerticalDragDetails!
+                                          .globalPosition.dy;
+                                  double? velocity = endDetails.primaryVelocity;
+
+                                  if (dx < 0) dx = -dx;
+                                  if (dy < 0) dy = -dy;
+                                  if (velocity! > 0) {
+                                    print('Hello swipe down');
+                                    setState(() {
+                                      listHeight = 100.h;
+                                      color = Colors.white;
+                                      listHeight = 1200.h;
+                                      height = 300.h;
+                                      width = 180.w;
+                                      sizeHeight = 60.h;
+                                      imgHeight = 50.h;
+                                      reviewHeight = 40.h;
+                                      textHeight = 32.sp;
+                                      titleHeight = 15.sp;
+                                      iconHeight = 20.h;
+                                      firstHeight = 100.h;
+                                      topLeft = 20.r;
+                                      topRight = 20.r;
+                                      topText = 20.h;
+                                      topHeight = 60.h;
+                                      belowHeight = 400.h;
+                                    });
+                                  } else {
+                                    print('Hello swipe down--------------');
+                                    setState(() {
+                                      // selected = !selected;
+                                      // color = Colors.black;
+                                      // height = 1200.h;
+                                      // width = 360.w;
+                                      // sizeHeight = 0.h;
+                                      // imgHeight = 0.h;
+                                      // reviewHeight = 0.h;
+                                      // textHeight = 0.sp;
+                                      // titleHeight = 0.sp;
+                                      // iconHeight = 0.h;
+                                      secondHeight = 0;
+                                      firstHeight = 0.h;
+                                      blackHeight = 0.h;
+                                      listHeight = 1200.h;
+                                      productHeight = 0.h;
+                                      topHeight = 10.h;
+                                      position = 10.h;
+                                      firstHeight = 0.h;
+                                      // topLeft = 0.r;
+                                      // topRight = 0.r;
+                                      // topText = 0.h;
+                                      // topHeight = 0.h;
+                                      // belowHeight = 0.h;
+                                      // rightMargin = 0.w;
+                                    });
+                                  }
+                                },
                                 onPanUpdate: (val) {},
                                 child: Container(
                                   margin: EdgeInsets.only(
@@ -457,54 +457,55 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                               ),
-                              // Padding(
-                              //   padding: EdgeInsets.only(top: topHeight),
-                              //   child: Container(
-                              //     margin: EdgeInsets.only(left: 20.w, right: 20.w),
-                              //     height: blackHeight,
-                              //     width: double.infinity,
-                              //     decoration: BoxDecoration(
-                              //       color: Colors.black,
-                              //       borderRadius: BorderRadius.all(
-                              //         Radius.circular(30.r),
-                              //       ),
-                              //     ),
-                              //     child: Padding(
-                              //       padding: EdgeInsets.only(
-                              //           top: 25.h, left: 30.w, right: 30.w),
-                              //       child: Row(
-                              //         mainAxisAlignment:
-                              //             MainAxisAlignment.spaceBetween,
-                              //         children: [
-                              //           Column(
-                              //             crossAxisAlignment:
-                              //                 CrossAxisAlignment.start,
-                              //             children: [
-                              //               const Text(
-                              //                 "210",
-                              //                 style: TextStyle(
-                              //                   color: Color(0xff7563a3),
-                              //                   fontWeight: FontWeight.bold,
-                              //                 ),
-                              //               ),
-                              //               Text(
-                              //                 "U 160",
-                              //                 style: TextStyle(
-                              //                   color: Colors.white,
-                              //                   fontSize: 40.sp,
-                              //                 ),
-                              //               ),
-                              //             ],
-                              //           ),
-                              //           Image.asset(
-                              //             "assets/images/card.png",
-                              //             height: 40.h,
-                              //           ),
-                              //         ],
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
+                              Padding(
+                                padding: EdgeInsets.only(top: topHeight),
+                                child: Container(
+                                  margin:
+                                      EdgeInsets.only(left: 20.w, right: 20.w),
+                                  height: blackHeight,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(30.r),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 25.h, left: 30.w, right: 30.w),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "210",
+                                              style: TextStyle(
+                                                color: Color(0xff7563a3),
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              "U 160",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 40.sp,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Image.asset(
+                                          "assets/images/card.png",
+                                          height: 40.h,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                           Container(
@@ -766,53 +767,53 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Positioned(
-                bottom: position.h,
-                child: AnimatedContainer(
-                  padding: EdgeInsets.only(top: 10.h),
-                  margin: EdgeInsets.only(left: 20.w, right: 20.w),
-                  height: blackHeight,
-                  width: blackwidth,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30.r),
-                    ),
-                  ),
-                  duration: const Duration(seconds: 2),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 0.h, left: 30.w, right: 30.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "210",
-                              style: TextStyle(
-                                color: Color(0xff7563a3),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "U 160",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 40.sp,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Image.asset(
-                          "assets/images/card.png",
-                          height: 40.h,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   bottom: position.h,
+              //   child: AnimatedContainer(
+              //     padding: EdgeInsets.only(top: 10.h),
+              //     margin: EdgeInsets.only(left: 20.w, right: 20.w),
+              //     height: blackHeight,
+              //     width: blackwidth,
+              //     decoration: BoxDecoration(
+              //       color: Colors.black,
+              //       borderRadius: BorderRadius.all(
+              //         Radius.circular(30.r),
+              //       ),
+              //     ),
+              //     duration: const Duration(seconds: 2),
+              //     child: Padding(
+              //       padding: EdgeInsets.only(top: 0.h, left: 30.w, right: 30.w),
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           Column(
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               const Text(
+              //                 "210",
+              //                 style: TextStyle(
+              //                   color: Color(0xff7563a3),
+              //                   fontWeight: FontWeight.bold,
+              //                 ),
+              //               ),
+              //               Text(
+              //                 "U 160",
+              //                 style: TextStyle(
+              //                   color: Colors.white,
+              //                   fontSize: 40.sp,
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //           Image.asset(
+              //             "assets/images/card.png",
+              //             height: 40.h,
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
