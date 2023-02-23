@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double listHeight = 335.h;
   double blackHeight = 100.h;
   double blackwidth = 320.w;
-  double position = 80.h;
+  double position = 60.h;
   double slide = 0.8;
   String name = "name";
   List colors = [
@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _scrollController.addListener(() {
       if (_scrollController.offset >= 10) {
         setState(() {
-          blackHeight = 40.h;
+          blackHeight = 50.h;
           blackwidth = 120.w;
           firstHeight = 0.h;
           listHeight = 1000.h;
@@ -101,7 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // timeDilation = 10.0;
     return Scaffold(
       backgroundColor: color,
       body: NotificationListener<ScrollNotification>(
@@ -180,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     topText = 20.h;
                                     topHeight = 60.h;
                                     belowHeight = 400.h;
-                                    position = 80.h;
+                                    position = 60.h;
                                     slide = 0.8;
                                   });
                                 } else {
@@ -241,14 +240,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                     color: kBlackColor,
                                     fontSize: textHeight,
-                                    fontWeight: FontWeight.bold),
+                                    fontFamily: "Poppins-Bold"),
                               ),
                               Text(
                                 "METCON 3",
                                 style: TextStyle(
                                     color: kBlackColor,
                                     fontSize: textHeight,
-                                    fontWeight: FontWeight.bold),
+                                    fontFamily: "Poppins-Bold"),
                               ),
                             ],
                           ),
@@ -265,7 +264,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(
                                 color: kBlackColor.withOpacity(0.6),
                                 fontSize: titleHeight,
-                                fontWeight: FontWeight.w500),
+                                fontFamily: "Poppins-SemiBold"),
                           ),
                           const Spacer(),
                           Icon(Icons.edit,
@@ -304,13 +303,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "Lastone",
                                         style: TextStyle(
                                             color: Color(0xff7563a3),
-                                            fontWeight: FontWeight.bold),
+                                            fontFamily: "Poppins-Bold"),
                                       ),
                                       Text(
                                         "CJ6314-146",
                                         style: TextStyle(
                                             color: Color(0xff7563a3),
-                                            fontWeight: FontWeight.bold),
+                                            fontFamily: "Poppins-Bold"),
                                       ),
                                     ],
                                   ),
@@ -423,7 +422,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(
                                 color: kBlackColor.withOpacity(0.6),
                                 fontSize: titleHeight,
-                                fontWeight: FontWeight.w500),
+                                fontFamily: "Poppins-SemiBold"),
                           ),
                         ],
                       ),
@@ -476,7 +475,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "Photos 609",
                             style: TextStyle(
-                              color: kGreyColor,
+                              color: const Color(0xff8eacf1),
                               fontWeight: FontWeight.bold,
                               fontSize: 15.sp,
                             ),
@@ -494,7 +493,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(
                                 color: kBlackColor,
                                 fontSize: titleHeight,
-                                fontWeight: FontWeight.normal),
+                                fontFamily: "Poppins-SemiBold"),
                           ),
                         ],
                       ),
@@ -530,7 +529,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               "All the way",
                               style: TextStyle(
-                                  color: kBlackColor, fontSize: 15.sp),
+                                  color: kBlackColor,
+                                  fontSize: 15.sp,
+                                  fontFamily: "Poppins-Regular"),
                             ),
                           ),
                         ),
@@ -567,7 +568,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               "Omg!!",
                               style: TextStyle(
-                                  color: kBlackColor, fontSize: 15.sp),
+                                  color: kBlackColor,
+                                  fontSize: 15.sp,
+                                  fontFamily: "Poppins-Regular"),
                             ),
                           ),
                         ),
@@ -614,6 +617,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               "U 160",
                               style: TextStyle(
+                                fontFamily: "Poppins-Medium",
                                 color: kWhiteColor,
                                 fontSize: animate ? 30.sp : 40.sp,
                               ),
