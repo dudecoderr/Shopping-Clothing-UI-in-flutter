@@ -16,5 +16,5 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 <p align="center">
-<img src="https://github.com/dudecoderr/Shopping-Clothing-UI-in-flutter/master/assets/images/s1.jpg" width="600px">
+<img src="https://raw.githubusercontent.com/dudecoderr/Shopping-Clothing-UI-in-flutter/master/assets/images/s1.jpg" width="600px">
 </p>
